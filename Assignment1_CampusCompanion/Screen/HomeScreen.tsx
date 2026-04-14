@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {View,Text,StyleSheet,TouchableOpacity,Image,Platform,ScrollView} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen: React.FC = () => {
@@ -42,22 +43,34 @@ const HomeScreen: React.FC = () => {
         <TouchableOpacity
           style={[styles.button, styles.buttonPlatform]}
           onPress={() => navigation.navigate('Contacts')}
+          accessibilityLabel="Navigate to Contacts"
         >
-          <Text style={styles.buttonText}>📋 Contacts</Text>
+          <View style={styles.buttonRow}>
+            <AntDesign name="user" size={18} color="#FFFFFF" />
+            <Text style={[styles.buttonText, styles.iconSpacing]}>Contacts</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('Schedule')}
+          accessibilityLabel="Navigate to Schedule"
         >
-          <Text style={styles.buttonText}>📅 Schedule</Text>
+          <View style={styles.buttonRow}>
+            <AntDesign name="calendar" size={18} color="#FFFFFF" />
+            <Text style={[styles.buttonText, styles.iconSpacing]}>Schedule</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('NoticeBoard')}
+          accessibilityLabel="Navigate to Notice Board"
         >
-          <Text style={styles.buttonText}>📌 Notice Board</Text>
+          <View style={styles.buttonRow}>
+            <AntDesign name="notification" size={18} color="#FFFFFF" />
+            <Text style={[styles.buttonText, styles.iconSpacing]}>Notice Board</Text>
+          </View>
         </TouchableOpacity>
 
         {/* Dark/Light theme toggle button */}
@@ -165,6 +178,13 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontWeight: '600',
     fontSize: 15,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  iconSpacing: {
+    marginLeft: 10,
   },
   toggle: {
     marginTop: 20,
