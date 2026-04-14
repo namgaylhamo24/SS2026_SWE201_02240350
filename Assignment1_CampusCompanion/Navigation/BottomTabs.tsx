@@ -5,10 +5,11 @@ import HomeScreen from '../Screen/HomeScreen';
 import ContactsScreen from '../Screen/ContactsScreen';
 import ScheduleScreen from '../Screen/ScheduleScreen';
 import NoticeBoard from '../Screen/NoticeBoard';
+import { AntDesign } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
-// Simple emoji icon component for tab bar
+// Simple emoji icon component for tab bar (fallback)
 const TabIcon = ({ emoji }: { emoji: string }) => (
   <Text style={{ fontSize: 20 }}>{emoji}</Text>
 );
@@ -35,24 +36,24 @@ export default function BottomTabs() {
       <Tab.Screen
         name="Home"
         component={HomeScreen}
-        options={{ tabBarIcon: () => <TabIcon emoji="🏠" /> }}
+        options={{ tabBarIcon: ({ color, size }) => <AntDesign name="home" size={size ?? 24} color={color} /> }}
       />
       <Tab.Screen
         name="Contacts"
         component={ContactsScreen}
-        options={{ tabBarIcon: () => <TabIcon emoji="📋" /> }}
+        options={{ tabBarIcon: ({ color, size }) => <AntDesign name="user" size={size ?? 24} color={color} /> }}
       />
       <Tab.Screen
         name="Schedule"
         component={ScheduleScreen}
-        options={{ tabBarIcon: () => <TabIcon emoji="📅" /> }}
+        options={{ tabBarIcon: ({ color, size }) => <AntDesign name="calendar" size={size ?? 24} color={color} /> }}
       />
       <Tab.Screen
         name="NoticeBoard"
         component={NoticeBoard}
         options={{
           title: 'Notices',
-          tabBarIcon: () => <TabIcon emoji="📌" />,
+          tabBarIcon: ({ color, size }) => <AntDesign name="notification" size={size ?? 24} color={color} />,
         }}
       />
     </Tab.Navigator>
