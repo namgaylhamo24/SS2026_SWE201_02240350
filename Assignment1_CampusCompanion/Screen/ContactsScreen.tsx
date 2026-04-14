@@ -7,11 +7,10 @@ const { width } = Dimensions.get('window');
 
 // List of important campus contacts
 const CONTACTS = [
-  { id: '1', name: 'IT Helpdesk', role: 'Technical Support', phone: '+975-5-362341', email: 'it@cst.rub.edu.bt' },
-  { id: '2', name: 'Student Services', role: 'Student Affairs', phone: '+975-5-362342', email: 'services@cst.rub.edu.bt' },
-  { id: '3', name: 'Library', role: 'Library & Resources', phone: '+975-5-362343', email: 'library@cst.rub.edu.bt' },
-  { id: '4', name: 'Security', role: 'Campus Security', phone: '+975-5-362344', email: 'security@cst.rub.edu.bt' },
-  { id: '5', name: 'Admin Office', role: 'Administration', phone: '+975-5-362345', email: 'admin@cst.rub.edu.bt' },
+  { id: '1', name: 'College Helpdesk', role: 'Technical Support', phone: '+975-17160538', email: 'info.cst@rub.edu.bt' },
+  { id: '2', name: 'Student Services', role: 'Student Affairs', phone: '+975-17362124', email: 'services@cst.rub.edu.bt' },
+  { id: '3', name: 'Library', role: 'Library & Resources', phone: '+975-16553316(O)', email: 'library@cst.rub.edu.bt' },
+  { id: '4', name: 'Admin Office', role: 'Administration', phone: '+975-17652414', email: 'admin@cst.rub.edu.bt' },
 ];
 
 const ContactsScreen: React.FC = () => {
