@@ -77,10 +77,14 @@ const HomeScreen: React.FC = () => {
         <TouchableOpacity
           style={styles.toggle}
           onPress={() => setDark(!dark)}
+          accessibilityLabel="Toggle dark mode"
         >
-          <Text style={styles.toggleText}>
-            {dark ? '☀️ Switch to Light' : '🌙 Switch to Dark'}
-          </Text>
+          <View style={styles.buttonRow}>
+            <AntDesign name={dark ? 'sun' : 'moon'} size={16} color="#FFFFFF" />
+            <Text style={[styles.toggleText, styles.iconSpacing]}>
+              {dark ? 'Switch to Light' : 'Switch to Dark'}
+            </Text>
+          </View>
         </TouchableOpacity>
 
       </View>
