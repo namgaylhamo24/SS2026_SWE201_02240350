@@ -11,14 +11,14 @@ const WEEK = [
   {
     day: 'Monday',
     classes: [
-      { subject: 'Mathematics', time: '9:00 - 10:00', room: 'Room 101' },
-      { subject: 'Computer Science', time: '11:00 - 12:00', room: 'Lab 3' },
+      { subject: 'Cryptology', time: '9:00 - 10:00', room: 'Room IT-06' },
+      { subject: 'Operating System', time: '11:00 - 12:00', room: 'Room IT-06' },
     ],
   },
   {
     day: 'Tuesday',
     classes: [
-      { subject: 'Physics', time: '10:00 - 11:00', room: 'Room 202' },
+      { subject: 'SWE201', time: '10:00 - 11:00', room: 'Room IT-06' },
     ],
   },
   {
@@ -30,13 +30,13 @@ const WEEK = [
   {
     day: 'Thursday',
     classes: [
-      { subject: 'Elective Module', time: '9:00 - 10:30', room: 'Room 305' },
+      { subject: 'DevOps', time: '9:00 - 10:30', room: 'Room IT-06' },
     ],
   },
   {
     day: 'Friday',
     classes: [
-      { subject: 'Seminar', time: '13:00 - 14:00', room: 'Hall A' },
+      { subject: 'SDA202', time: '13:00 - 14:00', room: 'Room IT-06' },
     ],
   },
 ];

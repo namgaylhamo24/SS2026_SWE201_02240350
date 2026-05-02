@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "rootDir": "./src",            // fixes the common source dir warning
+    "target": "ES2020",
+    "module": "Node16",           // required when using node16 resolution
+    "moduleResolution": "node16",  // <-- added comma
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,           // required when using emitDeclarationOnly
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*", "App.tsx", "index.tsx"],
+  "exclude": ["**/__mocks__/*", "**/__tests__/*", "**/__rsc_tests__/*"]
+}
