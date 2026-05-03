@@ -8,9 +8,12 @@ export default function AnimationDemoScreen() {
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onPanResponderGrant: () => {
-      Animated.spring(scale, { toValue: 1.1, useNativeDriver: true }).start();
+      Animated.spring(scale, { toValue: 1.08, useNativeDriver: true }).start();
     },
-    onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }], { useNativeDriver: false }),
+    // handle move explicitly to avoid Animated.event compatibility issues
+    onPanResponderMove: (e, gesture) => {
+      pan.setValue({ x: gesture.dx, y: gesture.dy });
+    },
     onPanResponderRelease: () => {
       Animated.parallel([
         Animated.spring(pan, { toValue: { x: 0, y: 0 }, useNativeDriver: true }),
@@ -26,7 +29,10 @@ export default function AnimationDemoScreen() {
       <View style={styles.playArea}>
         <Animated.View
           {...panResponder.panHandlers}
-          style={[pan.getLayout(), { transform: [{ scale }], ...styles.circle }]}
+          style={[
+            styles.circle,
+            { transform: [...pan.getTranslateTransform(), { scale: scale }] }
+          ]}
         />
       </View>
     </View>

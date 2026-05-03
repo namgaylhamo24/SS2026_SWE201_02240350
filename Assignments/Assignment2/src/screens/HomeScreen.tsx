@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { useTheme } from '../context/ThemeContext';
 import Card from '../components/Card';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -19,15 +20,20 @@ const items: Item[] = [
 
 export default function HomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const { theme } = useTheme();
 
   return (
-    <View style={{ flex: 1, padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: '700', marginBottom: 12 }}>Welcome</Text>
+    <View style={{ flex: 1, padding: 16, backgroundColor: theme.colors.background }}>
+      <Text style={{ fontSize: 24, fontWeight: '700', marginBottom: 12, color: theme.colors.text }}>Welcome</Text>
       <FlatList
         data={items}
         keyExtractor={(i) => i.id}
         renderItem={({ item }) => (
-          <Card title={item.title} onPress={() => navigation.navigate('Detail', { title: item.title })} />
+          <Card
+            title={item.title}
+            subtitle={item.title === 'Practice Coding' ? 'Hands-on exercises and challenges' : item.title === 'Study Math' ? 'Work through problem sets' : 'Read assigned chapters and summarize'}
+            onPress={() => navigation.navigate('Detail', { title: item.title })}
+          />
         )}
       />
     </View>

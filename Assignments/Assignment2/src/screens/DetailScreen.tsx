@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Text, Animated } from 'react-native';
 import { RouteProp, useRoute } from '@react-navigation/native';
+import { useTheme } from '../context/ThemeContext';
 
 export default function DetailScreen() {
   const route = useRoute<RouteProp<Record<string, object | undefined>, string>>();
   const title = (route.params as any)?.title ?? 'Detail';
+  const { theme } = useTheme();
 
   const slide = useRef(new Animated.Value(50)).current;
   const opacity = useRef(new Animated.Value(0)).current;
@@ -17,10 +19,10 @@ export default function DetailScreen() {
   }, []);
 
   return (
-    <View style={{ flex: 1, padding: 16 }}>
+    <View style={{ flex: 1, padding: 16, backgroundColor: theme.colors.background }}>
       <Animated.View style={{ transform: [{ translateY: slide }], opacity }}>
-        <Text style={{ fontSize: 22, fontWeight: '700' }}>{title}</Text>
-        <Text style={{ marginTop: 12 }}>This is a detail screen with a slide + fade animation on mount.</Text>
+        <Text style={{ fontSize: 22, fontWeight: '700', color: theme.colors.text }}>{title}</Text>
+        <Text style={{ marginTop: 12, color: theme.colors.muted }}>This is a detail screen with a slide + fade animation on mount.</Text>
       </Animated.View>
     </View>
   );
