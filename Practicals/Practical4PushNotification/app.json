@@ -27,11 +27,11 @@
     "plugins": [
       [
         "expo-notifications",
-        {
-          "icon": "./assets/notification-icon.png",
-          "color": "#ffffff",
-          "defaultChannel": "default"
-        }
+          {
+            "icon": "./assets/icon.png",
+            "color": "#ffffff",
+            "defaultChannel": "default"
+          }
       ]
     ],
     "extra": {

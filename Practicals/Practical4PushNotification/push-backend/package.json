@@ -1,0 +1,11 @@
+{
+  "name": "push-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node sendPush.js"
+  },
+  "dependencies": {
+    "expo-server-sdk": "^3.15.0"
+  }
+}
