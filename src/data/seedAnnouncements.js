@@ -1,0 +1,38 @@
+export const SEED_ANNOUNCEMENTS = [
+  {
+    id: 'news_1',
+    title: 'Library extends hours during finals',
+    summary: 'Main library open until 2 AM through May 15.',
+    body: 'The main campus library will stay open until 2:00 AM from May 1–15 to support finals week. Study rooms can be booked via the student portal.',
+    topic: 'Campus',
+    publishedAt: new Date(Date.now() - 86400000 * 2).toISOString(),
+    isBreaking: false,
+  },
+  {
+    id: 'news_2',
+    title: 'Basketball team reaches regional finals',
+    summary: 'Tigers win 78–71 and advance to the regional championship.',
+    body: 'The university basketball team secured a spot in the regional finals after a 78–71 victory. The next game is Saturday at 6 PM in the sports arena.',
+    topic: 'Sports',
+    publishedAt: new Date(Date.now() - 86400000).toISOString(),
+    isBreaking: false,
+  },
+  {
+    id: 'news_3',
+    title: 'Spring festival this weekend',
+    summary: 'Food stalls, live music, and clubs on the quad Saturday.',
+    body: 'Join the annual spring festival on the main quad this Saturday from 11 AM to 8 PM. Student clubs, local vendors, and live performances throughout the day.',
+    topic: 'Events',
+    publishedAt: new Date(Date.now() - 3600000 * 5).toISOString(),
+    isBreaking: false,
+  },
+  {
+    id: 'news_4',
+    title: 'Weather alert: severe thunderstorms',
+    summary: 'Evening classes may move online. Stay indoors if possible.',
+    body: 'The campus safety office has issued a severe thunderstorm advisory for this evening. Outdoor events are postponed and evening labs may shift to online links sent by instructors.',
+    topic: 'Alerts',
+    publishedAt: new Date(Date.now() - 3600000).toISOString(),
+    isBreaking: true,
+  },
+];

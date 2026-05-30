@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Campus News Push",
+    "slug": "campus-news-push",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4F46E5"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.swe201.campusnews",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "remote-notification"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundColor": "#E6F4FE"
+      },
+      "package": "com.swe201.campusnews",
+      "permissions": [
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#4F46E5",
+          "defaultChannel": "default"
+        }
+      ]
+    ],
+    "owner": "namgaylhamo",
+    "extra": {
+      "eas": {
+        "projectId": "c72dfd0d-e55f-4244-8f11-a6ada8f259b5"
+      }
+    }
+  }
+}
