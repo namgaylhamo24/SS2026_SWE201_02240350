@@ -35,6 +35,9 @@ yarn-error.*
 .env*.local
 backend/.env
 
+# ignore built APKs
+Assignment4_pushnotification.apk
+
 # typescript
 *.tsbuildinfo
 
