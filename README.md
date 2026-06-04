@@ -193,3 +193,54 @@ curl -X POST http://localhost:3000/notifications/broadcast \
 - **JavaScript** (`.js` / `.jsx`) only  
 - **Expo SDK 54**  
 - Packages: `expo-notifications`, `expo-device`, `expo-constants`
+
+## Demo Checklist
+
+Follow these quick steps to demonstrate the app (minimal steps to satisfy the functional requirements):
+
+- 1) Prepare the backend
+
+```bash
+cd Assignments/Assignment4_PushNotification/backend
+copy .env.example .env   # on Windows (or `cp .env.example .env` on macOS/Linux)
+# Edit backend/.env: set PORT and API_KEY as needed
+npm install
+npm start
+```
+
+- 2) Run the mobile app (physical Android device recommended for remote pushes)
+
+```bash
+cd Assignments/Assignment4_PushNotification
+npm install
+# For development build (remote push on Android):
+npx expo run:android
+# For quick testing (local notifications) in Expo Go:
+npx expo start
+```
+
+- 3) Register device for pushes
+
+Open the app → Settings → Request permission → "Get push token & register backend". Copy the full `ExponentPushToken[...]` if you need to test from Node or the browser.
+
+- 4) Send a test remote push
+
+From the browser: https://expo.dev/notifications — paste token, title/body, and optional data (e.g. `{"screen":"NewsFeed","topic":"Campus"}`).
+
+Or call the backend broadcast endpoint (example):
+
+```bash
+curl -X POST http://<YOUR_PC_IP>:3000/notifications/broadcast \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: dev-admin-key-change-me" \
+  -d '{"topic":"Campus","title":"Test","body":"Hello from backend","data":{"screen":"NewsFeed","topic":"Campus"}}'
+```
+
+- 5) Verify behavior
+- Notification arrives in system tray (background) or displays in-app (foreground).
+- Tap the notification → app navigates to the relevant screen (e.g., NewsFeed or announcement detail).
+
+Notes:
+- Use your PC LAN IP in `EXPO_PUBLIC_API_URL` (not `localhost`) when testing on a physical device.
+- If testing Android remote pushes, prefer a development build (`expo run:android`) rather than Expo Go.
+
