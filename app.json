@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "d2ce6160-386a-4049-b71f-ee5aac973b7d"
+      }
+    },
+    "android": {
+      "package": "com.namgaylhamo.ss2026_swe201_02240350"
+    }
+  }
+}
